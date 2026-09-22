@@ -1,0 +1,6 @@
+{
+  "name": "FaceSync AI",
+  "description": "An AI-powered visual analysis platform designed to transform facial visual data into meaningful insights.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

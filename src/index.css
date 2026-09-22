@@ -1,0 +1,203 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #030712;
+    color: #e2e8f0;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-chakra {
+    font-family: 'Chakra Petch', sans-serif;
+  }
+
+  .font-mono-tech {
+    font-family: 'Space Mono', monospace;
+  }
+}
+
+/* Custom Futuristic Glows and Shadows */
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.45), 0 0 40px rgba(6, 182, 212, 0.2);
+}
+
+.glow-cyan-sm {
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.4);
+}
+
+.glow-blue {
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.5), 0 0 50px rgba(59, 130, 246, 0.25);
+}
+
+.glow-purple {
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.4), 0 0 50px rgba(168, 85, 247, 0.2);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 12px rgba(6, 182, 212, 0.7), 0 0 24px rgba(6, 182, 212, 0.3);
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 14px rgba(168, 85, 247, 0.75), 0 0 28px rgba(168, 85, 247, 0.4);
+}
+
+.text-glow-white {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Glassmorphism HUD Panels */
+.hud-glass {
+  background: rgba(8, 17, 34, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), inset 0 0 16px 0 rgba(56, 189, 248, 0.05);
+}
+
+.hud-glass-hover:hover {
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 12px 36px 0 rgba(6, 182, 212, 0.15), inset 0 0 20px 0 rgba(56, 189, 248, 0.08);
+}
+
+/* Scanning Beam Animation */
+@keyframes verticalScan {
+  0% {
+    top: 0%;
+    opacity: 0.85;
+  }
+  48% {
+    top: 96%;
+    opacity: 1;
+  }
+  50% {
+    top: 98%;
+    opacity: 0.9;
+  }
+  98% {
+    top: 2%;
+    opacity: 1;
+  }
+  100% {
+    top: 0%;
+    opacity: 0.85;
+  }
+}
+
+.animate-scan-beam {
+  animation: verticalScan 3.6s ease-in-out infinite;
+}
+
+/* Continuous Rotations */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinReverseSlow {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 28s linear infinite;
+}
+
+.animate-spin-reverse-slow {
+  animation: spinReverseSlow 36s linear infinite;
+}
+
+.animate-spin-medium {
+  animation: spinSlow 14s linear infinite;
+}
+
+/* Subtle Floating Animation */
+@keyframes floatSubtle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes floatSubtleReverse {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.animate-float-1 {
+  animation: floatSubtle 5s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: floatSubtleReverse 6s ease-in-out infinite 0.5s;
+}
+
+.animate-float-3 {
+  animation: floatSubtle 7s ease-in-out infinite 1.2s;
+}
+
+/* Pulse Glow */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.8;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.35);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+/* Energy Platform Ring Keyframes */
+@keyframes platformPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.95;
+  }
+}
+
+.animate-platform-pulse {
+  animation: platformPulse 4s ease-in-out infinite;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(6, 182, 212, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 182, 212, 0.6);
+}
